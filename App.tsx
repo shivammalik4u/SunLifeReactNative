@@ -7,6 +7,7 @@ import Header from './components/Header';
 import TabsNavigation from './Navigations/TabsNavigation';
 import HomeNavigation from './Navigations/HomeNavigation';
 import HomeScreen from './screens/HomeScreen';
+import DrawerNavigation from './Navigations/DrawerNavigation';
 // import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
@@ -17,7 +18,9 @@ export default function App() {
       <SafeAreaView style={styles.container}>
 
         <NavigationContainer>
-          <HomeNavigation />
+          <DrawerNavigation/>
+          {/* <HomeNavigation /> */}
+          {/* <TabsNavigation/> */}
         </NavigationContainer>
       </SafeAreaView>
     // </GestureHandlerRootView>

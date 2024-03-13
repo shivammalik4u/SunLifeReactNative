@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import Colors from '../utils/Colors';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Header from './Header';
 // import { Ionicons } from '@expo/vector-icons';
@@ -36,6 +36,13 @@ const EmployeeForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
+
+    const route = useRoute();
+    const { type } = route.params || {};
+
+    useEffect(()=>{
+        setTOS(type)
+    },[type])
 
     const handlePickerChange = (itemValue) => {
         setTOS(itemValue);

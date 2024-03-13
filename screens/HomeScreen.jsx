@@ -19,6 +19,9 @@ import Colors from '../utils/Colors'
 import DashboardScreen from './DashboardScreen'
 // import { Ionicons } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import DailyHabitsCalander from '../components/DailyHabitsCalander'
+
+import { HabitScreen, AllHabits } from './HabitScreen'
 
 
 
@@ -26,19 +29,20 @@ const HomeScreen = () => {
   return (
     <View>
       <Header title={'Hi User!'} />
-      <View style={styles.input}>
-        {/* <Ionicons name="search" size={20} color={Colors.GRAY} /> */}
-        <Icon name="search" size={20} color={Colors.PRIMARY} />
-        <TextInput placeholder='Search' style={{ width: '100%' }} />
-      </View>
       <ScrollView style={{ padding: 7, backgroundColor: Colors.WHITE }} nestedScrollEnabled={true}>
-        <SectionHeading heading={'Dashboard'} />
-        <DashboardScreen />
+        <View style={styles.input}>
+          {/* <Ionicons name="search" size={20} color={Colors.GRAY} /> */}
+          <Icon name="search" size={20} color={Colors.PRIMARY} />
+          <TextInput placeholder='Search' style={{ width: '100%' }} />
+        </View>
+        {/* <SectionHeading heading={'Dashboard'} />
+        <DashboardScreen /> */}
 
         <SectionHeading heading={'Next up for you'} seeAll={false} />
         <ForYou forYou={forYou} />
         <SectionHeading heading={'Next up for you'} seeAll={false} />
         <JourneyCard />
+        <DailyHabitsCalander />
         <ConnectFitnessTracker />
         <SectionHeading heading={'Get more, Healthier'} seeAll={true} />
         <BookNowCard bookNow={bookNow} />
@@ -62,7 +66,6 @@ const styles = StyleSheet.create({
     height: 45,
     padding: 5,
     borderRadius: 99,
-    marginTop: 10,
     paddingHorizontal: 20,
     display: 'flex',
     flexDirection: 'row',

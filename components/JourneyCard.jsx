@@ -9,26 +9,56 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const JourneyCard = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.card}>
-                <View>
-                    <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>You are missing 100% returns</Text>
-                    <Text style={{ fontSize: 12, fontWeight: '300', color: Colors.GREY, marginTop: 5 }}>Explore Health returns from ABHI</Text>
-                </View>
-                <View style={{ alignSelf: 'flex-end' }}>
-                    {/* <Ionicons name="arrow-forward" size={20} color={Colors.BLACK} /> */}
-                    <Icon name="long-arrow-right" size={20} color={Colors.PRIMARY}  />
+        <View style={{ display: 'flex', flexDirection: 'column', gap:5 }}>
 
+            <View style={styles.container}>
+                <View style={styles.card}>
+                    <View>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>7/33</Text>
+                        <Text style={{ fontSize: 13, fontWeight: '600', color: Colors.PRIMARY }}>Active Days</Text>
+                        <Text style={{ fontSize: 12, fontWeight: '300', color: Colors.GREY, marginTop: 5 }}>Updated 11/03/2024</Text>
+                    </View>
+                    <View style={{ alignSelf: 'flex-end' }}>
+                        {/* <Ionicons name="arrow-forward" size={20} color={Colors.BLACK} /> */}
+                        <Icon name="long-arrow-right" size={20} color={Colors.PRIMARY} />
+
+                    </View>
+                </View>
+                <View style={styles.card}>
+                    <View>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>1155</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>Health Returns</Text>
+                        <Text style={{ fontSize: 12, fontWeight: '300', color: Colors.GREY, marginTop: 5 }}>Updated 11/03/2024</Text>
+                    </View>
+                    <View style={{ alignSelf: 'flex-end' }}>
+                        {/* <Ionicons name="arrow-forward" size={20} color={Colors.BLACK} /> */}
+                        <Icon name="long-arrow-right" size={20} color={Colors.PRIMARY} />
+                    </View>
                 </View>
             </View>
-            <View style={styles.card}>
-                <View>
-                    <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>Health Assessment</Text>
-                    <Text style={{ fontSize: 12, fontWeight: '300', color: Colors.GREY, marginTop: 5 }}>To understand your lifestyle better</Text>
+            <View style={styles.container}>
+                <View style={styles.card}>
+                    <View>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>64/99</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>Lifestyle score</Text>
+                        <Text style={{ fontSize: 12, fontWeight: '300', color: Colors.GREY, marginTop: 5 }}>Updated 11/03/2024</Text>
+                    </View>
+                    <View style={{ alignSelf: 'flex-end' }}>
+                        {/* <Ionicons name="arrow-forward" size={20} color={Colors.BLACK} /> */}
+                        <Icon name="long-arrow-right" size={20} color={Colors.PRIMARY} />
+
+                    </View>
                 </View>
-                <View style={{ alignSelf: 'flex-end' }}>
-                    {/* <Ionicons name="arrow-forward" size={20} color={Colors.BLACK} /> */}
-                    <Icon name="long-arrow-right" size={20} color={Colors.PRIMARY}  />
+                <View style={styles.card}>
+                    <View>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>65%</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '600', color: Colors.PRIMARY }}>Wellbeing Score</Text>
+                        <Text style={{ fontSize: 12, fontWeight: '300', color: Colors.GREY, marginTop: 5 }}>Updated 11/03/2024</Text>
+                    </View>
+                    <View style={{ alignSelf: 'flex-end' }}>
+                        {/* <Ionicons name="arrow-forward" size={20} color={Colors.BLACK} /> */}
+                        <Icon name="long-arrow-right" size={20} color={Colors.PRIMARY} />
+                    </View>
                 </View>
             </View>
         </View>
@@ -52,7 +82,7 @@ const styles = StyleSheet.create({
         borderWidth: 0.3,
         padding: 10,
         justifyContent: 'space-between',
-        backgroundColor: Colors.LIGHT_GREY
+        backgroundColor: Colors.SECONDARY
     },
 
 

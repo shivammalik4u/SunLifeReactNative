@@ -24,18 +24,6 @@ const Tab = createBottomTabNavigator();
 const TabsNavigation = () => {
     return (
         <Tab.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: Colors.PRIMARY }} initialRouteName='Login'>
-            <Tab.Screen name="Login" component={LoginScreen}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        // <Ionicons name="people" size={24} color={color} />
-                        <Icon name="plus" size={30} color={Colors.PRIMARY} />
-
-                    ),
-                    tabBarLabel: ({ color, size }) => (
-                        <Text style={{ color: color, }}>Login Screen</Text>
-                    )
-                }} />
-
 
             <Tab.Screen name="home" component={HomeScreen}
                 options={{

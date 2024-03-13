@@ -35,6 +35,7 @@ const ForYou = ({ forYou }) => {
                     </TouchableOpacity>
                 )}
             />
+            
         </ScrollView>
     )
 }
@@ -52,7 +53,8 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         gap: 3,
-        marginTop: 4
+        marginTop: 4,
+        marginBottom:4
     },
     badge: {
         backgroundColor: Colors.BLACK,

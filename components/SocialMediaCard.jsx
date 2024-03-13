@@ -1,11 +1,18 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground, Linking } from 'react-native'
 import React from 'react'
 import Colors from '../utils/Colors';
 import { useNavigation } from '@react-navigation/native';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
+
+
+
+
+
 const SocialMediaCard = ({ socialPost }) => {
   const navigation = useNavigation();
+
+  
 
   return (
     <ScrollView nestedScrollEnabled={true}>
@@ -14,7 +21,8 @@ const SocialMediaCard = ({ socialPost }) => {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         renderItem={({ item, index }) => (
-          <TouchableOpacity
+          <TouchableOpacity onPress={() => {
+            const url = item.link ;Linking.openURL(url)}}
             style={styles.container}>
             <ImageBackground
               source={item.Image}
@@ -23,7 +31,7 @@ const SocialMediaCard = ({ socialPost }) => {
                 <View style={{
                   backgroundColor: 'rgba(0, 0, 0, 0.5)', borderRadius: 10,
                   padding: 5, height: 100,
-                  width: 350, display:'flex', justifyContent:'space-around'
+                  width: 350, display: 'flex', justifyContent: 'space-around'
                 }}>
                   <Text style={styles.title}>{item.Title}</Text>
                   <Text style={styles.description}>{item.description}</Text>
@@ -39,6 +47,7 @@ const SocialMediaCard = ({ socialPost }) => {
     </ScrollView>
   )
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -78,4 +87,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default SocialMediaCard
+export default SocialMediaCard;

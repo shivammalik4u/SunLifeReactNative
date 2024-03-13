@@ -85,10 +85,10 @@ const DashboardScreen = () => {
                                 {/* <Ionicons name="heart" size={24} color={Colors.PRIMARY_LIGHT} /> */}
                                 <Icon name="heart" size={20} color={Colors.PRIMARY} />
 
-                                <Text style={{ fontWeight: 'normal', color: Colors.PRIMARY, fontSize: 15 }}>
+                                <Text style={{ fontWeight: 'normal',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center'  }}>
                                     Heart Rate
                                 </Text>
-                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 20 }}>
+                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
                                     72
                                 </Text>
                             </View>
@@ -97,10 +97,10 @@ const DashboardScreen = () => {
                             <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center', gap: 2, }}>
                                 {/* <Ionicons name="footsteps" size={24} color={Colors.PRIMARY_LIGHT} /> */}
                                 <Icon name="street-view" size={20} color={Colors.PRIMARY} />
-                                <Text style={{ fontWeight: 'normal', color: Colors.PRIMARY, fontSize: 15 }}>
+                                <Text style={{ fontWeight: 'normal',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center'  }}>
                                     Footsteps
                                 </Text>
-                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 20 }}>
+                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
                                     5758
                                 </Text>
                             </View>
@@ -124,10 +124,10 @@ const DashboardScreen = () => {
                         {
                             (fill) => (
                                 <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                    {/* <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
+                                    {/* <Text style={{ fontWeight: 'bold',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center'  }}>
                                     {burnedCalories} Calaries Burned
                                 </Text> */}
-                                    <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
+                                    <Text style={{ fontWeight: 'bold',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center'  }}>
                                         {/* {burnedCalories} Calaries Burned */}
                                         Overall Health Score
                                     </Text>
@@ -144,7 +144,7 @@ const DashboardScreen = () => {
                                     {/* <Text>
                                     ----------
                                 </Text> */}
-                                    {/* <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
+                                    {/* <Text style={{ fontWeight: 'bold',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center'  }}>
                                     {maxCalories} Calaries
                                 </Text> */}
                                 </View>
@@ -160,10 +160,10 @@ const DashboardScreen = () => {
                             <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center', gap: 2, }}>
                                 {/* <Ionicons name="bonfire" size={24} color={Colors.PRIMARY_LIGHT} /> */}
                                 <Icon name="certificate" size={20} color={Colors.PRIMARY} />
-                                <Text style={{ fontWeight: 'normal', color: Colors.PRIMARY, fontSize: 15 }}>
+                                <Text style={{ fontWeight: 'normal',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center' , textAlign:'center' }}>
                                     Calories
                                 </Text>
-                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 20 }}>
+                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
                                     1282
                                 </Text>
                             </View>
@@ -172,10 +172,10 @@ const DashboardScreen = () => {
                             <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: 'center', gap: 2, }}>
                                 {/* <Ionicons name="git-network" size={24} color={Colors.PRIMARY_LIGHT} /> */}
                                 <Icon name="tachometer" size={20} color={Colors.PRIMARY} />
-                                <Text style={{ fontWeight: 'normal', color: Colors.PRIMARY, fontSize: 15 }}>
+                                <Text style={{ fontWeight: 'normal',  color: Colors.PRIMARY, fontSize: 13, textAlign:'center'  }}>
                                     BP
                                 </Text>
-                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 20 }}>
+                                <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
                                     90/120
                                 </Text>
                             </View>

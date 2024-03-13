@@ -10,16 +10,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Header = ({ title }) => {
   const navigation = useNavigation();
 
+  const openDrawer = () => {
+    navigation.openDrawer();
+  };
+
   return (
     <View style={styles.Header}>
       <Text style={{ color: Colors.TEXT, fontSize: 20 }}>{title}</Text>
       <View style={{ display: 'flex', flexDirection: 'row', gap: 15 }}>
-        <TouchableOpacity style={styles.iconContainer}>
-          {/* <Ionicons name="mic" size={20} color={Colors.TEXT} /> */}
+        {/* <TouchableOpacity style={styles.iconContainer}>
+          <Ionicons name="mic" size={20} color={Colors.TEXT} />
           <Icon name="microphone" size={20} color={Colors.PRIMARY} />
+        </TouchableOpacity> */}
 
 
-        </TouchableOpacity>
+
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('notification')}>
           {/* <Ionicons name="notifications-outline" size={20} color={Colors.TEXT} /> */}
           <Icon name="bell" size={20} color={Colors.PRIMARY} />
@@ -27,6 +32,10 @@ const Header = ({ title }) => {
           <View style={styles.badge}>
             <Text style={styles.badgeText}>5</Text>
           </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.iconContainer} onPress={openDrawer}>
+          {/* <Ionicons name="notifications-outline" size={20} color={Colors.TEXT} /> */}
+          <Icon name="navicon" size={20} color={Colors.PRIMARY} />
         </TouchableOpacity>
       </View>
     </View>

@@ -3,22 +3,65 @@ import React, { useEffect, useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 // import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { FlatList, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import Colors from '../utils/Colors';
 import SectionHeading from '../components/SectionHeading'
-import Icon from 'react-native-vector-icons/FontAwesome';
-
 
 
 import { Calendar } from 'react-native-calendars';
 import PageHeader from '../components/PageHeader';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import habits from '../data/habits';
 
 
 
-const MarketingScreen = () => {
+
+
+
+const AllHabits = () => {
+    const navigation = useNavigation();
+    return (
+        <View>
+            <SectionHeading heading={'My Habits'} />
+            <FlatList
+                data={habits}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item, index }) => (
+                    <TouchableOpacity key={index} style={{
+                        padding: 10,
+                        backgroundColor: Colors.WHITE,
+                        marginRight: 10,
+                        borderRadius: 30,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        borderWidth: 0.5,
+                        borderColor: Colors.PRIMARY,
+                        display: 'flex',
+                        flexDirection: 'row',
+                        gap: 3,
+                        marginTop: 4,
+                        marginBottom: 4
+                    }}
+                        onPress={() => navigation.navigate('habit-screen', { item: item })}>
+                        {/* <Ionicons name={item.icon} size={20} color={Colors.GREY} /> */}
+                        <Icon name={item.icon} size={15} color={Colors.PRIMARY} />
+
+                        <Text style={{ textAlign: 'center', marginTop: 0 }}>{item.Title}</Text>
+
+                    </TouchableOpacity>
+                )}
+            />
+        </View>
+    )
+}
+
+
+const HabitScreen = () => {
     const { params } = useRoute();
 
     const [item, setItem] = useState();
+
 
 
     const navigation = useNavigation();
@@ -33,7 +76,6 @@ const MarketingScreen = () => {
     const onDayPress = (day) => {
         setSelectedDate(day.dateString);
     };
-
 
 
 
@@ -61,35 +103,13 @@ const MarketingScreen = () => {
                     <View style={{ display: 'flex', gap: 3, padding: 5 }}>
                         <Text style={{ fontWeight: 'bold', fontSize: 20, marginTop: 3 }}>{item.Name}</Text>
 
-                        <View style={{ marginTop: 3 }}>
-                            <View style={{ display: 'flex', flexDirection: 'row', gap: 7, alignItems: 'center' }}>
-                                {/* <Ionicons name="person" size={16} color={Colors.PRIMARY} /> */}
-                                {/* <Ionicons name="person-outline" size={20} color={Colors.PRIMARY} /> */}
-                                <Icon name="tag" size={20} color={Colors.PRIMARY} />
-
-                                <Text style={{ fontSize: 15, color: Colors.GRAY }}>Brand Name</Text>
-                            </View>
-                            <View style={{ display: 'flex', flexDirection: 'row', gap: 7, alignItems: 'center' }}>
-                                {/* <Ionicons name="megaphone-outline" size={20} color={Colors.PRIMARY} /> */}
-                                <Icon name="qrcode" size={20} color={Colors.PRIMARY} />
-                                <Text style={{ fontSize: 15, color: Colors.GRAY }}>Offer</Text>
-                            </View>
-                            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <View style={{ display: 'flex', flexDirection: 'row', gap: 7, alignItems: 'center' }}>
-                                    {/* <Ionicons name="book" size={16} color={Colors.PRIMARY} /> */}
-                                    {/* <Ionicons name="at-circle-outline" size={20} color={Colors.PRIMARY} /> */}
-                                <Icon name="link" size={20} color={Colors.PRIMARY} />
-                                    <Text style={{ fontSize: 15, color: Colors.GRAY }}>xyz.com</Text>
-                                </View>
-                                {/* <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY }}>Price: $10/hour</Text> */}
-                            </View>
-                        </View>
+                       
                         <SectionHeading heading='Description' />
                         <Text numberOfLines={20} ellipsizeMode='tail' style={{ marginTop: -10, marginBottom: 10, marginLeft: 6 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus consectetur, cum, rem repudiandae sit inventore repellendus nam ut, saepe aperiam ratione veritatis placeat nesciunt accusamus iure velit maxime? Dolorum, error quo fugiat ratione reiciendis aut quae labore quas excepturi doloremque dolores. Quos nesciunt quaerat quisquam ratione! Nulla tempora repudiandae nostrum perferendis ab Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, nobis? Veniam amet saepe molestias consectetur modi magnam doloribus quae. Dicta voluptatibus, quis nesciunt ut, ab magnam dolore accusamus officiis cumque, ad itaque animi facilis quibusdam provident aut sit odio numquam ipsam quisquam assumenda! Fugit accusamus eum sed eveniet magnam laboriosam, recusandae sequi tempore? Quas quidem nihil provident hic adipisci at suscipit. Quae suscipit odit in a iusto eaque nisi temporibus illum est molestias ut alias corporis, perferendis sint nesciunt ea.</Text>
                     </View>
                     <TouchableOpacity onPress={() => console.log('Book now is pressed')} style={styles.button}>
                         {/* <Ionicons name="link" size={20} color={Colors.WHITE} /> */}
-                        <Text style={{ textAlign: 'center', color: Colors.WHITE }}>Check Now</Text>
+                        <Text style={{ textAlign: 'center', color: Colors.WHITE }}>Edit Habit</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -124,4 +144,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default MarketingScreen;
+export { HabitScreen, AllHabits };

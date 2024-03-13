@@ -10,8 +10,14 @@ import MarketingScreen from '../screens/MarketingScreen';
 import Notification from '../screens/Notification';
 import DashboardScreen from '../screens/DashboardScreen';
 import EmployeeForm from '../components/EmployeeForm';
-const Stack = createStackNavigator();
+import DrawerNavigation from './DrawerNavigation';
+import { HabitScreen } from '../screens/HabitScreen';
+import DetailsScreen from '../screens/DetailsScreen';
 
+
+
+
+const Stack = createStackNavigator();
 
 const HomeNavigation = () => {
     return (
@@ -24,6 +30,8 @@ const HomeNavigation = () => {
             <Stack.Screen name='notification' component={Notification} />
             <Stack.Screen name='dashboard-screen' component={DashboardScreen} />
             <Stack.Screen name='employee-form' component={EmployeeForm} />
+            <Stack.Screen name='habit-screen' component={HabitScreen}/>
+            <Stack.Screen name='detail-screen' component={DetailsScreen}/>
         </Stack.Navigator>
     )
 }
