@@ -34,7 +34,7 @@ const SocialMediaCard = ({ socialPost }) => {
                   width: 350, display: 'flex', justifyContent: 'space-around'
                 }}>
                   <Text style={styles.title}>{item.Title}</Text>
-                  <Text style={styles.description}>{item.description}</Text>
+                  {/* <Text style={styles.description}>{item.description}</Text> */}
                 </View>
               </View>
             </ImageBackground>

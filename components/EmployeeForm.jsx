@@ -33,16 +33,19 @@ const EmployeeForm = () => {
     const [requestingFor, setRequestingFor] = useState('');
     const [email, setEmail] = useState('');
     const [mobile, setMobile] = useState('');
+    const [speciality, setSpeciality] = useState('');
+    const [otherSpeciality, setOtherSpeciality] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [dependentAge, setDependentAge] = useState('');
 
 
     const route = useRoute();
     const { type } = route.params || {};
 
-    useEffect(()=>{
+    useEffect(() => {
         setTOS(type)
-    },[type])
+    }, [type])
 
     const handlePickerChange = (itemValue) => {
         setTOS(itemValue);
@@ -52,15 +55,21 @@ const EmployeeForm = () => {
         if (!tos) return null;
 
         switch (tos) {
-            case 'Benifit Navigation':
+            case 'Benefit Navigation':
                 return 'Start an inquiry to better understand your Health Navigation benefits (Internal Service Type: Benefits Navigation, Service Inquiry, Bill Resolve through Claim Medic)';
             case 'Get a second option':
                 return 'Do you have questions about a new diagnosis or treatment plan? (Internal Service Type: PL, PRR, FA, MedIntel Other, PL + FA, RSO, Pathology Re-read, Radiology Re-read, Case Review/Consultation)';
             case 'Manage an Existing Condition':
-                return 'Are you seeking support in managing an existing condition? (Internal Service Type: PL, PRR, FA, MedIntel Other, PL + FA, Case Review/Consultation)';
+                return `Are you seeking support in managing an existing condition? (Internal Service Type: PL, PRR, FA, MedIntel Other, PL + FA, Case Review/Consultation)
+1 : Provider List
+2 : Provider Research report (PRR)
+3: Facilitated Appointment
+4: Case review`;
             case 'Be Proactive About Your Health':
-                return 'Tell us your goal and we can find the best resources for you! (Internal Service Type: Case Review, Medical Intelligence Report, Physician Report Card)';
-            case 'Discuss anothor concern':
+                return `Tell us your goal and we can find the best resources for you! (Internal Service Type: Case Review, Medical Intelligence Report, Physician Report Card)
+1 : Medical Intelligence Report
+2 : Physician Report Card`;
+            case 'Discuss another concern':
                 return 'Let us navigate you through a health concern or question, such as finding a Primary Care Physician or other routine care providers. (Internal Service Type: PL, Case Review)';
             default:
                 return null;
@@ -70,15 +79,15 @@ const EmployeeForm = () => {
         if (!tos) return null;
 
         switch (tos) {
-            case 'Benifit Navigation':
+            case 'Benefit Navigation':
                 return 'Terms and Conditions ';
             case 'Get a second option':
                 return 'Terms and Conditions, Insurance Card, Demographic Form, Medical Release Form, Provider List, Information Sharing Form ';
             case 'Manage an Existing Condition':
-                return 'Terms and Conditions, Insurance Card, Demographic Form, Medical Release Form, Provider List, Information Sharing Form ';
+                return `Terms and Conditions, Insurance Card, Demographic Form, Medical Release Form, Provider List, Information Sharing Form `;
             case 'Be Proactive About Your Health':
                 return 'Terms and Conditions ';
-            case 'Discuss anothor concern':
+            case 'Discuss another concern':
                 return 'Terms and Conditions, Insurance Card, Demographic Form, Medical Release Form, Provider List, Information Sharing Form ';
             default:
                 return null;
@@ -95,12 +104,12 @@ const EmployeeForm = () => {
 
     return (
         <ScrollView>
-            <PageHeader title={'Form'}/>
+            <PageHeader title={'New service request'} />
 
             {/* // <ImageBackground source={require('../../assets/Images/LoginBackground2.jpg')} style={styles.backgroundImage}> */}
             <View style={styles.container}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', alignSelf: 'flex-start', marginTop: 20, color: Colors.BLACK }}>
-                    Fill form <Text style={{ color: Colors.PRIMARY }}>Sun Life Health 360
+                    New service request<Text style={{ color: Colors.PRIMARY }}>Sun Life Health 360
                     </Text>
                 </Text>
                 <View style={{ width: '100%', marginTop: 30 }}>
@@ -151,11 +160,11 @@ const EmployeeForm = () => {
                             itemStyle={styles.pickerItem}
                         >
                             <Picker.Item label="Select type of service" value="" />
-                            <Picker.Item label="Benifit Navigation" value="Benifit Navigation" />
+                            <Picker.Item label="Benefit Navigation" value="Benefit Navigation" />
                             <Picker.Item label="Get a second option" value="Get a second option" />
                             <Picker.Item label="Manage an Existing Condition" value="Manage an Existing Condition" />
                             <Picker.Item label="Be Proactive About Your Health" value="Be Proactive About Your Health" />
-                            <Picker.Item label="Discuss anothor concern" value="Discuss anothor concern" />
+                            <Picker.Item label="Discuss another concern" value="Discuss another concern" />
                             {/* Add more items as needed */}
                         </Picker>
                     </View>
@@ -165,6 +174,51 @@ const EmployeeForm = () => {
                             Description: {getDescription()}
                         </Text> : ''}
 
+
+                    <Text style={styles.label}>Specialty</Text>
+                    <View style={styles.pickerContainer}>
+                        <Picker
+                            selectedValue={speciality}
+                            onValueChange={(itemValue, itemIndex) => setSpeciality(itemValue)}
+                            style={styles.picker}
+                            itemStyle={styles.pickerItem}
+                        >
+                            <Picker.Item label="Select speciality" value="" />
+                            <Picker.Item label="Addiction Psychiatry" value="Addiction Psychiatry" />
+                            <Picker.Item label="Child Psychiatry" value="Child Psychiatry" />
+                            <Picker.Item label="Clinical Professional Counselor-LCPC" value="Clinical Professional Counselor-LCPC" />
+                            <Picker.Item label="Dermatology" value="Dermatology" />
+                            <Picker.Item label="Endocrinology and Metabolism" value="Endocrinology and Metabolism" />
+                            <Picker.Item label="Family Medicine" value="Family Medicine" />
+                            <Picker.Item label="Gastroenterology" value="Gastroenterology" />
+                            <Picker.Item label="General Preventive Medicine" value="General Preventive Medicine" />
+                            <Picker.Item label="Geriatric Medicine" value="Geriatric Medicine" />
+                            <Picker.Item label="Gynecology" value="Gynecology" />
+                            <Picker.Item label="Internal Medicine" value="Internal Medicine" />
+                            <Picker.Item label="Marriage and Family Therapist-LMFT" value="Marriage and Family Therapist-LMFT" />
+                            <Picker.Item label="Maternal-Fetal Medicine" value="Maternal-Fetal Medicine" />
+                            <Picker.Item label="Mental Health Counselor-LMHC" value="Mental Health Counselor-LMHC" />
+                            <Picker.Item label="Nutrition" value="Nutrition" />
+                            <Picker.Item label="Obstetrics and Gynecology" value="Obstetrics and Gynecology" />
+                            <Picker.Item label="Psychiatry" value="Psychiatry" />
+                            <Picker.Item label="Surgery" value="Surgery" />
+                            <Picker.Item label="Therapy" value="Therapy" />
+                            <Picker.Item label="Urology" value="Urology" />
+                            <Picker.Item label="Other" value="Other" />
+                            {/* Add more items as needed */}
+                        </Picker>
+                    </View>
+
+                    {speciality == 'Other' ?
+                        <TextInput
+                            style={[styles.input]}
+                            onChangeText={setOtherSpeciality}
+                            value={otherSpeciality}
+                            placeholder="Enter what speciality you want"
+                            keyboardType="phone-pad"
+                            autoCapitalize="none"
+                        /> : <></>
+                    }
 
                     <Text style={styles.label}>Mobile:</Text>
                     <TextInput
@@ -186,15 +240,66 @@ const EmployeeForm = () => {
                         autoCapitalize="none"
                     />
 
+
                     <Text style={styles.label}>Requesting For: </Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={setRequestingFor}
-                        value={requestingFor}
-                        placeholder="Requesting for ?"
-                        keyboardType='default'
-                        autoCapitalize="none"
-                    />
+                    <View style={styles.pickerContainer}>
+                        <Picker
+                            selectedValue={requestingFor}
+                            onValueChange={(itemValue, itemIndex) => setRequestingFor(itemValue)}
+                            style={styles.picker}
+                            itemStyle={styles.pickerItem}
+                        >
+                            <Picker.Item label="Requesting For" value="" />
+                            <Picker.Item label="Self" value="Self" />
+                            <Picker.Item label="Dependent" value="Dependent" />
+                        </Picker>
+                    </View>
+                    {requestingFor == 'Dependent' ?
+                        <>
+                            <Text style={styles.label}>Dependent's Name: </Text>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={setDependentName}
+                                value={dependentName}
+                                placeholder="Dependent's Name"
+                                keyboardType='default'
+                                autoCapitalize="none"
+                            />
+                            <Text style={styles.label}>Relationship to Employee: </Text>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={setRelationship}
+                                value={relationship}
+                                placeholder="Dependent Relationship"
+                                keyboardType='default'
+                                autoCapitalize="none"
+                            />
+                            <Text style={styles.label}>Dependent Age: </Text>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={setDependentAge}
+                                value={dependentAge}
+                                placeholder="Dependent Age"
+                                keyboardType='default'
+                                autoCapitalize="none"
+                            />
+                            <Text style={styles.label}>Dependent Gender</Text>
+                            <View style={styles.pickerContainer}>
+                                <Picker
+                                    selectedValue={gender}
+                                    onValueChange={(itemValue, itemIndex) => setGender(itemValue)}
+                                    style={styles.picker}
+                                    itemStyle={styles.pickerItem}
+                                >
+                                    <Picker.Item label="Select Gender" value="" />
+                                    <Picker.Item label="Male" value="Male" />
+                                    <Picker.Item label="Female" value="Female" />
+                                    {/* Add more items as needed */}
+                                </Picker>
+                            </View>
+                        </>
+
+                        : <></>}
 
                     <Text style={styles.label}>Location: </Text>
                     <TextInput
@@ -232,38 +337,11 @@ const EmployeeForm = () => {
                         keyboardType='default'
                         autoCapitalize="none"
                     />
-                    <Text style={styles.label}>Dependent's Name: </Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={setDependentName}
-                        value={dependentName}
-                        placeholder="Dependent's Name"
-                        keyboardType='default'
-                        autoCapitalize="none"
-                    />
-                    <Text style={styles.label}>Relationship to Employee: </Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={setRelationship}
-                        value={relationship}
-                        placeholder="Location"
-                        keyboardType='default'
-                        autoCapitalize="none"
-                    />
-                    <Text style={styles.label}>Type of Service</Text>
-                    <View style={styles.pickerContainer}>
-                        <Picker
-                            selectedValue={gender}
-                            onValueChange={(itemValue, itemIndex) => setTOS(setGender)}
-                            style={styles.picker}
-                            itemStyle={styles.pickerItem}
-                        >
-                            <Picker.Item label="Select Gender" value="" />
-                            <Picker.Item label="Male" value="Male" />
-                            <Picker.Item label="Female" value="Female" />
-                            {/* Add more items as needed */}
-                        </Picker>
-                    </View>
+
+
+
+
+
                     <Text style={styles.label}>Insurance Carrier: </Text>
                     <TextInput
                         style={styles.input}

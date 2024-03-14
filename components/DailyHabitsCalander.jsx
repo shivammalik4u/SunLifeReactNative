@@ -30,7 +30,7 @@ const DailyHabitsCalander = () => {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item, index }) => (
-                    <TouchableOpacity key={index} style={[styles.container, item <= 17 && { backgroundColor: Colors.SECONDARY }]}
+                    <TouchableOpacity key={index} style={[styles.container, item <= 6 && { backgroundColor: Colors.SECONDARY }]}
                         onPress={() => item.Nav && navigation.navigate(item.Nav)}>
                         {/* <Ionicons name={item.icon} size={20} color={Colors.GREY} /> */}
                         <Icon name={item.icon} size={15} color={Colors.PRIMARY} />

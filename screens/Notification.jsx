@@ -16,23 +16,23 @@ const Notification = () => {
     const notifications = [
         {
             id: 1,
-            name: 'First',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim commodi, perferendis ut omnis placeat quibusdam laborum. Quidem, illo animi est magni voluptas voluptates ducimus, enim assumenda, a porro quisquam numquam eius fugiat debitis velit atque explicabo? Quam nostrum nam, error, autem nesciunt, cum voluptatibus ab ducimus ut ea omnis mollitia.'
+            name: 'Service Request Closed',
+            description: 'Your service request no 98765 for Provider List was closed successfully'
         },
         {
             id: 2,
-            name: 'Second',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim commodi, perferendis ut omnis placeat quibusdam laborum. Quidem, illo animi est magni voluptas voluptates ducimus, enim assumenda, a porro quisquam numquam eius fugiat debitis velit atque explicabo? Quam nostrum nam, error, autem nesciunt, cum voluptatibus ab ducimus ut ea omnis mollitia.'
+            name: 'Daily habits target achieved:',
+            description: 'You achieved the target for 10K steps for 13th March successfully. Now, take that to the next level by upgrading your target'
         },
         {
             id: 3,
-            name: 'Third',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim commodi, perferendis ut omnis placeat quibusdam laborum. Quidem, illo animi est magni voluptas voluptates ducimus, enim assumenda, a porro quisquam numquam eius fugiat debitis velit atque explicabo? Quam nostrum nam, error, autem nesciunt, cum voluptatibus ab ducimus ut ea omnis mollitia.'
+            name: 'Wellness rewards',
+            description: 'Congratulations! You have been awarded with a discount of 5% for the next service on account of consistent performance in your Wellness score. Please get in touch with your health advisor to know more'
         },
         {
             id: 4,
-            name: 'Fourth',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim commodi, perferendis ut omnis placeat quibusdam laborum. Quidem, illo animi est magni voluptas voluptates ducimus, enim assumenda, a porro quisquam numquam eius fugiat debitis velit atque explicabo? Quam nostrum nam, error, autem nesciunt, cum voluptatibus ab ducimus ut ea omnis mollitia.'
+            name: 'Daily recommendations',
+            description: 'Here’s a curated list of content which we think you would like based on your past history.'
         },
     ]
 

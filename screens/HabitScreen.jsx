@@ -105,7 +105,7 @@ const HabitScreen = () => {
 
                        
                         <SectionHeading heading='Description' />
-                        <Text numberOfLines={20} ellipsizeMode='tail' style={{ marginTop: -10, marginBottom: 10, marginLeft: 6 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus consectetur, cum, rem repudiandae sit inventore repellendus nam ut, saepe aperiam ratione veritatis placeat nesciunt accusamus iure velit maxime? Dolorum, error quo fugiat ratione reiciendis aut quae labore quas excepturi doloremque dolores. Quos nesciunt quaerat quisquam ratione! Nulla tempora repudiandae nostrum perferendis ab Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, nobis? Veniam amet saepe molestias consectetur modi magnam doloribus quae. Dicta voluptatibus, quis nesciunt ut, ab magnam dolore accusamus officiis cumque, ad itaque animi facilis quibusdam provident aut sit odio numquam ipsam quisquam assumenda! Fugit accusamus eum sed eveniet magnam laboriosam, recusandae sequi tempore? Quas quidem nihil provident hic adipisci at suscipit. Quae suscipit odit in a iusto eaque nisi temporibus illum est molestias ut alias corporis, perferendis sint nesciunt ea.</Text>
+                        <Text numberOfLines={20} ellipsizeMode='tail' style={{ marginTop: -10, marginBottom: 10, marginLeft: 6 }}>{item.Description}</Text>
                     </View>
                     <TouchableOpacity onPress={() => console.log('Book now is pressed')} style={styles.button}>
                         {/* <Ionicons name="link" size={20} color={Colors.WHITE} /> */}

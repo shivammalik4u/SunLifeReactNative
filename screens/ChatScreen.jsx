@@ -15,7 +15,7 @@ const ChatScreen = () => {
 
     const item = [
         {
-            Title: 'Benifit Navigation',
+            Title: 'Benefit Navigation',
             description: `Start a chat to better understand your health navtgaton benefits`
         },
         {
@@ -31,7 +31,7 @@ const ChatScreen = () => {
             description: 'Tell us your goal and we can help find the best resources for you.'
         },
         {
-            Title: 'Discuss anothor concern',
+            Title: 'Discuss another concern',
             description: 'Let us navvgate you through a health concern or question. such as finding a PCP'
         },
         

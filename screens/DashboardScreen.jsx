@@ -101,7 +101,7 @@ const DashboardScreen = () => {
                                     Footsteps
                                 </Text>
                                 <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
-                                    5758
+                                    5,758
                                 </Text>
                             </View>
                         </View>
@@ -164,7 +164,7 @@ const DashboardScreen = () => {
                                     Calories
                                 </Text>
                                 <Text style={{ fontWeight: 'bold', color: Colors.PRIMARY, fontSize: 15 }}>
-                                    1282
+                                    1,282
                                 </Text>
                             </View>
                         </View>
